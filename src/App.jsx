@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <DataTable columns={["id", "name"]} fetchData={async() => {
-        const data = await fetch("http://localhost:3000/user/1")
+        const data = await fetch("http://localhost:3000/user/1",{method: "POST"})
         console.log("data :", data)
         return data
         
