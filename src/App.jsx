@@ -9,13 +9,13 @@ function App() {
       .then(result => result.users)
 
     console.log("fetchData result :", data)
-    return data.json()
+    return data
 
   }
 
   return (
     <>
-      <DataTable columns={["id", "name"]} fetchData={fetchData} />
+      <DataTable columns={["id", "firstName", "lastName", "age"]} fetchData={fetchData} />
     </>
   );
 }
