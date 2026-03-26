@@ -1,6 +1,6 @@
 import "./DataTable.css";
 
-export default function DataTable(columns, fetchData) {
+export default function DataTable({columns, fetchData}) {
   console.log("columns :", columns)
   console.log("fetchData :", fetchData)
   return(
