@@ -25,9 +25,9 @@ function App() {
   }
 
   const fetchDataFakeUser = async () => {
-    const data = await fetch("https://localhost:3000/users/1", { method: "POST" })
+    const data = await fetch("http://localhost:3000/user/1", { method: "POST" })
       .then(result => result.json())
-      .then(result => result.users)
+      .then(result => result.data)
 
     console.log("fetchData result fake user:", data)
     return data
@@ -40,7 +40,7 @@ function App() {
 
         <DataTable columns={["id", "name", "rating"]} fetchData={fetchDataRecipe} fallback={"Chargement des Recettes"} /> */}
 
-        <DataTable columns={["id", "firstName", "maidenName"]} fetchData={fetchDataFakeUser} fallback={"Chargement des FakeUsers"} />
+        <DataTable columns={["id", "firstName", "jobTitle"]} fetchData={fetchDataFakeUser} fallback={"Chargement des FakeUsers"} />
       </Suspense>
 
     </>
