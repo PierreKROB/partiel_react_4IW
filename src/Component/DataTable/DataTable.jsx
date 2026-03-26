@@ -2,16 +2,15 @@ import "./DataTable.css";
 import { useEffect, useState } from "react";
 
 export default function DataTable({ columns, fetchData, fallback }) {
-  console.log("columns :", columns)
-  console.log("fetchData :", fetchData)
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  console.log("Data : ", data)
 
   useEffect(() => {
     const data = async () => {
       setLoading(true);
       const data = await fetchData();
-      console.log("data :", data)
       setData(data)
       setLoading(false);
     };
