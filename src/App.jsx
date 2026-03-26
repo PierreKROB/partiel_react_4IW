@@ -36,9 +36,9 @@ function App() {
   return (
     <>
       <Suspense fallback={<div>Chargement du composant ...</div>}>
-        {/* <DataTable columns={["id", "firstName", "lastName", "age"]} fetchData={fetchDataUser} fallback={"Chargement des Users"} />
+        <DataTable columns={["id", "firstName", "lastName", "age"]} fetchData={fetchDataUser} fallback={"Chargement des Users"} />
 
-        <DataTable columns={["id", "name", "rating"]} fetchData={fetchDataRecipe} fallback={"Chargement des Recettes"} /> */}
+        <DataTable columns={["id", "name", "rating"]} fetchData={fetchDataRecipe} fallback={"Chargement des Recettes"} />
 
         <DataTable columns={["id", "firstName", "jobTitle"]} fetchData={fetchDataFakeUser} fallback={"Chargement des FakeUsers"} />
       </Suspense>
