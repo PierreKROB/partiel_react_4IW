@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      <Suspense fallback={<div>Chargement ...</div>}>
+      <Suspense fallback={<div>Chargement du composant ...</div>}>
         <DataTable columns={["id", "firstName", "lastName", "age"]} fetchData={fetchData} />
       </Suspense>
 
