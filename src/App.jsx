@@ -5,7 +5,12 @@ function App() {
 
   return (
     <>
-      <DataTable columns={[]} fetchData={() => {}} />
+      <DataTable columns={["id", "name"]} fetchData={async() => {
+        const data = await fetch("http://localhost:3000/user/1")
+        console.log("data :", data)
+        return data
+        
+      }} />
     </>
   );
 }
