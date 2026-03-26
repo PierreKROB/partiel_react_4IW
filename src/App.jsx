@@ -5,7 +5,7 @@ const DataTable = lazy(() => import('./Component/DataTable/DataTable.jsx'));
 
 function App() {
 
-  const fetchData = async () => {
+  const fetchDataUser = async () => {
     const data = await fetch("https://dummyjson.com/users")
       .then(result => result.json())
       .then(result => result.users)
@@ -15,10 +15,21 @@ function App() {
 
   }
 
+  const fetchDataRecipe = async () => {
+    const data = await fetch("https://dummyjson.com/recipes")
+      .then(result => result.json())
+      .then(result => result.recipes)
+
+    console.log("fetchData result :", data)
+    return data
+
+  }
   return (
     <>
       <Suspense fallback={<div>Chargement du composant ...</div>}>
-        <DataTable columns={["id", "firstName", "lastName", "age"]} fetchData={fetchData} />
+        <DataTable columns={["id", "firstName", "lastName", "age"]} fetchData={fetchDataUser} fallback={"Chargement des Users"}/>
+
+        <DataTable columns={["id", "name", "rating", "image"]} fetchData={fetchDataRecipe} fallback={"Chargement des Recettes"}/>
       </Suspense>
 
     </>

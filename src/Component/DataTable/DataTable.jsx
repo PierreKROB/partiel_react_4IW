@@ -1,7 +1,7 @@
 import "./DataTable.css";
 import { useEffect, useState } from "react";
 
-export default function DataTable({ columns, fetchData }) {
+export default function DataTable({ columns, fetchData, fallback }) {
   console.log("columns :", columns)
   console.log("fetchData :", fetchData)
   const [data, setData] = useState([]);
@@ -21,7 +21,7 @@ export default function DataTable({ columns, fetchData }) {
   return (
     <div>
       <h1>DataTable</h1>
-      {loading && <div>Chargement des données...</div>}
+      {loading && <div>{fallback}</div>}
       <table>
         <thead>
           <tr>
