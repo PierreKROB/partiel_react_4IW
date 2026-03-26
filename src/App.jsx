@@ -3,14 +3,16 @@ import DataTable from './Component/DataTable/DataTable.jsx';
 
 function App() {
 
+  const fetchData = async () => {
+    const data = await fetch("http://localhost:3000/user/1", { method: "POST" })
+    console.log("data :", data)
+    return data
+
+  }
+
   return (
     <>
-      <DataTable columns={["id", "name"]} fetchData={async() => {
-        const data = await fetch("http://localhost:3000/user/1",{method: "POST"})
-        console.log("data :", data)
-        return data
-        
-      }} />
+      <DataTable columns={["id", "name"]} fetchData={fetchData} />
     </>
   );
 }
